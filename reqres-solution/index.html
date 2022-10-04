@@ -9,17 +9,41 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
         integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 
 <body>
-    <button onclick="getUsers()">GET USERS</button>
-    <button onclick="registerUser()">REGISTER USER</button>
-    <button onclick="loginUser()">LOGIN USER</button>
-    <br>
-    <label for="userName">Name:</label>
-    <input type="text" id="userName">
-    <button onclick="createUser()">Create User</button>
-    <pre id="output"></pre>
+    <main class="container">
+        <div class="row">
+            <div class="col">
+                <form onsubmit="createUser(event);">
+                    <label class="form-label" for="userName">Name:</label>
+                    <input class="form-control" type="text" id="userName">
+                    <label class="form-label" for="userJob">Job:</label>
+                    <input class="form-control" type="text" id="userJob">
+                    <button type="submit" class="btn btn-primary">Create User</button>
+                </form>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-primary" onclick="getUsers()">GET USERS</button>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-primary" onclick="registerUser()">REGISTER USER</button>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-primary" onclick="loginUser()">LOGIN USER</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <pre id="output"></pre>
+                </div>
+            </div>
+        </div>
+    </main>
     <script src="./index.js"></script>
 </body>
 
